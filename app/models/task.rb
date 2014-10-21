@@ -3,4 +3,12 @@ class Task < ActiveRecord::Base
   validates :description, presence: true
 
   belongs_to :user
+
+  def self.incomplete
+    where(completed: false)
+  end
+
+  def self.completed
+    where(completed: true)
+  end
 end

@@ -1,0 +1,10 @@
+<% if target.errors.any? %>
+  <h2>Error Error</h2>
+  <%= image_tag "error_cat.jpeg" %> 
+  <h2><%= pluralize target.errors.count, "error" %> prevented the form from saving:</h2>
+  <ul>
+    <% target.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

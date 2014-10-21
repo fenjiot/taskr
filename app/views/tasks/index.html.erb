@@ -2,6 +2,7 @@
 
 <h3>Here are your tasks</h3>
 
+<%= render "error_messages", target: @task %>
 <%= form_for @task do |form| %>
   <div>
     <%= form.label :title %>
@@ -16,6 +17,17 @@
   <%= form.submit %>
 <% end %>
 
+<h4>Incomplete tasks</h4>
+<ul>
+  <%= render @incomplete_tasks %>
+</ul>
+
+<h4>Completed tasks</h4>
+<ul>
+  <%= render @completed_tasks %>
+</ul>
+
+<h4>All Tasks</h4>
 <ul>
   <%= render @tasks %>
 </ul>
