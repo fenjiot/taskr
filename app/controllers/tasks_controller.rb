@@ -9,9 +9,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = current_user.tasks.create(task_params)
-
-    render @task
+    @task = current_user.tasks.new(task_params)
+    if @task.save
+      render @task
+    else
+      render partial: "error_messages",
+        locals: { target: @task },
+        status: 422
+    end
   end
 
   def update
