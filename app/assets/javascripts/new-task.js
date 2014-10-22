@@ -16,12 +16,12 @@ $(function() {
   var onFailure = function(ajaxObject){
     var htmlFromServer = ajaxObject.responseText;
     $("#errors").html(htmlFromServer);
-  }
+  };
 
   var resetForm = function() {
     newTaskForm.find("#task_title, #task_description").val("");
     newTaskForm.find("#task_title").focus();
-  }
+  };
 
   newTaskForm.submit(postTaskDataToServer);
 

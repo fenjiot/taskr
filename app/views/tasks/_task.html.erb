@@ -1,7 +1,9 @@
-<li>
+<li id="<%= dom_id(task) %>" >
   <%= task.title %> -- <%= task.description %>
   <%= form_for task do |form| %>
     <%= form.hidden_field :completed, value: 1 %>
     <%= form.submit "Complete task" %>
   <% end %>
+
+  <%= button_to "Delete task", task_path(task), method: :delete %>
 </li>

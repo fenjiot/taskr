@@ -2,7 +2,6 @@ class TasksController < ApplicationController
   before_action :require_login
 
   def index
-    @tasks = current_user.tasks
     @task = Task.new
     @incomplete_tasks = current_user.tasks.incomplete
     @completed_tasks = current_user.tasks.complete
@@ -22,7 +21,13 @@ class TasksController < ApplicationController
   def update
     task = current_user.tasks.find(params[:id])
     task.update(task_params)
-    redirect_to tasks_path
+    render task
+  end
+
+  def destroy
+    task = current_user.tasks.find(params[:id])
+    task.destroy
+    render nothing: true
   end
 
   private
