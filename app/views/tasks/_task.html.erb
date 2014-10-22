@@ -1,8 +1,16 @@
 <li id="<%= dom_id(task) %>" >
   <%= task.title %> -- <%= task.description %>
-  <%= form_for task do |form| %>
-    <%= form.hidden_field :completed, value: 1 %>
-    <%= form.submit "Complete task" %>
+
+  <% if task.completed == false %>
+    <%= form_for task do |form| %>
+      <%= form.hidden_field :completed, value: 1 %>
+      <%= form.submit "Complete task" %>
+    <% end %>
+  <% else %>
+    <%= form_for task do |form| %>
+      <%= form.hidden_field :completed, value: 0 %>
+      <%= form.submit "Task incomplete" %>
+    <% end %>
   <% end %>
 
   <%= button_to "Delete task", task_path(task), method: :delete %>
