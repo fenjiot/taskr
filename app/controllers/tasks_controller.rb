@@ -5,7 +5,7 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks
     @task = Task.new
     @incomplete_tasks = current_user.tasks.incomplete
-    @completed_tasks = current_user.tasks.completed
+    @completed_tasks = current_user.tasks.complete
   end
 
   def create

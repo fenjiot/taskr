@@ -17,7 +17,7 @@ $(function() {
   newTaskForm.submit(postTaskDataToServer);
 
   var addTaskToList = function(taskHTML) {
-    var taskList = $("ul");
+    var taskList = $("#incomplete_tasks_list");
     taskList.prepend(taskHTML);
   };
 });

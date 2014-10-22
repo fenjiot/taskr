@@ -8,7 +8,7 @@ class Task < ActiveRecord::Base
     where(completed: false)
   end
 
-  def self.completed
+  def self.complete
     where(completed: true)
   end
 end
