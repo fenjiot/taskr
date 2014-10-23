@@ -37,3 +37,7 @@ a:link, a:visited, a:hover, a:active { text-decoration: none; color: #87AF5F; }
 .image_preview {
   max-width: 150px;
 }
+
+h3.collapsed::after {
+  content: ' ...';
+}

@@ -18,12 +18,12 @@
   <%= form.submit %>
 <% end %>
 
-<h4>Incomplete tasks</h4>
-<ul id="incomplete_tasks_list">
+<h3 id="incomplete-header" data-list-id="incomplete-tasks-list">Incomplete tasks</h3>
+<ul id="incomplete-tasks-list">
   <%= render @incomplete_tasks %>
 </ul>
 
-<h4>Completed tasks</h4>
-<ul id="complete_tasks_list">
+<h3 id="complete-header" data-list-id="complete-tasks-list">Completed tasks</h3>
+<ul id="complete-tasks-list">
   <%= render @completed_tasks %>
 </ul>

@@ -13,14 +13,14 @@ $(function() {
     return false;
   };
 
-  $("body").on("submit", "form.edit_task", completeTaskDataFromServer);
+  $("body").on("submit", ".complete-form", completeTaskDataFromServer);
 
   var resetIncompleteTaskList = function(element){
     element.parents("li").fadeOut();
   };
 
   var addTaskToList = function(taskHTML) {
-    var taskList = $("#complete_tasks_list");
+    var taskList = $("#complete-tasks-list");
     taskList.prepend(taskHTML);
     $("#errors").html("");
   };
