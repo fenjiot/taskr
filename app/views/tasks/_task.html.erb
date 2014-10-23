@@ -1,5 +1,5 @@
-<li id="<%= dom_id(task) %>" >
-  <%= task.title %> -- <%= task.description %>
+<li id="<%= dom_id(task) %>" class="task" data-list-id="<%= task.id %>">
+<strong class="title"><%= task.title %></strong> -- <%= task.description %>
 
   <% if ! task.completed? %>
     <%= form_for task, html: { class: "complete-form" } do |form| %>
