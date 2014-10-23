@@ -6,7 +6,7 @@ $(function() {
       data: $(this).serialize()
     });
 
-    $(this).parents("li").fadeOut("fast");
+    $(this).parents("li").fadeOut();
     conversation.done(addTaskToUncompletedList);
 
     return false;
